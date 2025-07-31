@@ -2,7 +2,8 @@
 #include <string.h>
 
 // Shopping Cart Program
-int main(){    
+int main()
+{
     char item[50] = "";
     float price = 0.0f;
     char currency = '$';
@@ -26,7 +27,18 @@ int main(){
     printf("You have bought %d %s(s)\n", quantity, item);
     printf("The total price is: %c%.2f\n\n", currency, total);
 
-    printf("Thank you for buying from us, see you soon!\n");
-
-    return 0;
+    int choice = 0;
+    printf("To exit the program enter (0), and to buy another value enter other number: ");
+    scanf("%d", &choice);
+    if (choice == 0)
+    {
+        printf("Thank you for using the Shopping Cart Program. Goodbye!\n");
+        return 0;
+    }
+    else
+    {
+        printf("\n\n");
+        getchar();
+        main();
+    }
 }
